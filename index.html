@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://unpkg.com/vue@next"></script>
+    <title>String manipulation</title>
+</head>
+
+<body>
+    <div id="app" class="container">
+        <h1>String manipulation</h1>
+        <input id="inputField" v-model="word" v-on:keyup.enter="show(word)" placeholder="Type a word">
+        <button id="showButton" v-on:click="show(word)">Show it</button>
+        <ol>
+            <li v-for="word in words">{{word}}</li>
+        </ol>
+        <table class="table table-bordered table-striped">
+            <thead></thead>
+            <tbody>
+                <tr>
+                    <th scope="row">Word (Unaltered)</th>
+                    <td>{{words[0]}}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Word (Lower Case)</th>
+                    <td>{{words[1]}}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Word (Upper Case)</th>
+                    <td>{{words[2]}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script src="js/index.js"></script>
+</body>
+
+</html>
